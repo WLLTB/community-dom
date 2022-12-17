@@ -1,0 +1,33 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        # 用户服务
+        - id: user_router
+          uri: lb://USER  #注意:书写服务名不能是含有_
+          predicates:
+            - Path=/api/token/**,/api/tokens/**,/api/user/**
+          filters:
+            - StripPrefix=1    #去掉前缀filter 去掉请求路由中1级前缀   /captchas
+
+        - id: blog_router
+          uri: lb://BLOG
+          predicates:
+            - Path=/api/blog/**
+          filters:
+            - StripPrefix=1
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*" #允许所有域名访问
+            allowedMethods: "*" #允许所有请求方式访问
+            allowedHeaders: "*" #允许所有请求头可以访问
