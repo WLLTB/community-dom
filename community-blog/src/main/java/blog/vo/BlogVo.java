@@ -1,7 +1,5 @@
-package common.bean;
+package blog.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,15 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Blog {
-    @TableId
-    private String id;
-
+public class BlogVo {
     private String author;
 
     private String title;
 
-    private Integer typeId;
+    private String type;
 
     private Integer views;
 
