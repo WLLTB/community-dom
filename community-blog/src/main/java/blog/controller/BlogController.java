@@ -32,21 +32,21 @@ public class BlogController {
     @PostMapping
     @ApiOperation("新增博客")
     public Result saveBlog(@RequestBody Blog blog) {
-        blogService.save(blog);
-        return Result.success(null);
+        boolean isSave = blogService.save(blog);
+        return isSave ? Result.success(null) : Result.fail("删除失败!");
     }
 
     @PutMapping
     @ApiOperation("修改博客")
     public Result updateBlog(@RequestBody Blog blog) {
-        blogService.updateById(blog);
-        return Result.success(null);
+        boolean isUpdate = blogService.updateById(blog);
+        return isUpdate ? Result.success(null) : Result.fail("删除失败!");
     }
 
     @DeleteMapping
     @ApiOperation("删除博客")
     public Result deleteBlog(@RequestParam String id) {
-        blogService.removeById(id);
-        return Result.success(null);
+        boolean isRemove = blogService.removeById(id);
+        return isRemove ? Result.success(null) : Result.fail("删除失败!");
     }
 }

@@ -18,7 +18,7 @@ public class Result {
         return new Result(ResultCode.SUCCESS_CODE, "", data);
     }
 
-    public static Result fail(Integer code, String message) {
-        return new Result(code, message, null);
+    public static Result fail(String message) {
+        return new Result(ResultCode.FAIL_CODE, message, null);
     }
 }
