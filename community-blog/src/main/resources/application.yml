@@ -17,6 +17,10 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 
 logging:
   level:
@@ -29,8 +33,3 @@ feign:
       default:
         connectTimeout: 100000
         readTimeout: 100000
-
-mybatis-plus:
-  configuration:
-    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射 address_book ---> addressBook
-    map-underscore-to-camel-case: true

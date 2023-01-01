@@ -1,7 +1,12 @@
 package blog.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import common.bean.Blog;
+import blog.bean.Blog;
+import org.springframework.data.domain.Page;
 
-public interface BlogService extends IService<Blog> {
+public interface BlogService {
+    Page<Blog> pageBlog(Integer size, Integer currentSize, String title);
+
+    void saveBlog(Blog blog);
+
+    void delete(String id);
 }

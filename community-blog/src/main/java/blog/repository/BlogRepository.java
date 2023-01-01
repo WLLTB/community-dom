@@ -1,9 +1,13 @@
 package blog.repository;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import common.bean.Blog;
-import org.apache.ibatis.annotations.Mapper;
+import blog.bean.Blog;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@Mapper
-public interface BlogRepository extends BaseMapper<Blog> {
+@Repository
+public interface BlogRepository extends JpaRepository<Blog, String> {
+    Page<Blog> findBlogByTitleIsLike(String title, Pageable Pageable);
 }
