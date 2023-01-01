@@ -5,11 +5,13 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import common.bean.Blog;
 import common.common.Result;
+import common.utils.MinIOUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Api(tags = "博客")
 @RestController
@@ -48,5 +50,11 @@ public class BlogController {
     public Result deleteBlog(@RequestParam String id) {
         boolean isRemove = blogService.removeById(id);
         return isRemove ? Result.success(null) : Result.fail("删除失败!");
+    }
+
+    @PostMapping("/upload")
+    @ApiOperation("测试上传")
+    public Result xx(MultipartFile file) {
+        return Result.success(new MinIOUtil().upload(file));
     }
 }
