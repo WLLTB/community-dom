@@ -51,10 +51,4 @@ public class BlogController {
         boolean isRemove = blogService.removeById(id);
         return isRemove ? Result.success(null) : Result.fail("删除失败!");
     }
-
-    @PostMapping("/upload")
-    @ApiOperation("测试上传")
-    public Result xx(MultipartFile file) {
-        return Result.success(new MinIOUtil().upload(file));
-    }
 }

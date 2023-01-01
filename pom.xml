@@ -12,6 +12,7 @@
         <module>community-blog</module>
         <module>community-user</module>
         <module>community-gateway</module>
+        <module>community-util</module>
     </modules>
 
     <!--继承springboot父项目-->

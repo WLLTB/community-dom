@@ -25,6 +25,13 @@ spring:
           filters:
             - StripPrefix=1
 
+        - id: util_router
+          uri: lb://UTIL
+          predicates:
+            - Path=/api/util/**
+          filters:
+            - StripPrefix=2
+
       globalcors:
         cors-configurations:
           '[/**]':
