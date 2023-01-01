@@ -1,4 +1,4 @@
-package user.config;
+package util.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class SwaggerConfig {
         Docket docket = new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo()).enable(true)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("user"))
+                .apis(RequestHandlerSelectors.basePackage("util"))
                 .paths(PathSelectors.any())
                 .build();
 

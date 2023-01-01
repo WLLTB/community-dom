@@ -1,4 +1,4 @@
-package user.controller;
+package util.controller;
 
 import common.common.Result;
 import common.utils.MinIOUtil;
@@ -6,9 +6,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@RequestMapping("/file")
+@RequestMapping("/util")
 @RestController
-public class FileController {
+public class UtilController {
     @PostMapping
     @ApiOperation("文件上传")
     public Result upload(@RequestParam(name = "file") MultipartFile file) {

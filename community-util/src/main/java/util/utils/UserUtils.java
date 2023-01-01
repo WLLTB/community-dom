@@ -1,4 +1,4 @@
-package user.utils;
+package util.utils;
 
 import cn.hutool.crypto.digest.DigestAlgorithm;
 import cn.hutool.crypto.digest.Digester;

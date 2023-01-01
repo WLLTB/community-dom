@@ -1,4 +1,4 @@
-package user.utils;
+package util.utils;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;

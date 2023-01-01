@@ -1,4 +1,4 @@
-package user.config;
+package util.config;
 
 import common.common.ApiException;
 import common.common.Result;
