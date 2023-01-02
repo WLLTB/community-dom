@@ -1,9 +1,12 @@
 package user.repository;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import common.bean.User;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@Mapper
-public interface UserRepository extends BaseMapper<User> {
+@Repository
+public interface UserRepository extends JpaRepository<User, String> {
+    User findUserByUsernameAndPassword(String username, String password);
+
+    User findUserById(String id);
 }
