@@ -1,6 +1,6 @@
 package user.service;
 
-import common.bean.User;
+import user.bean.User;
 
 public interface UserService {
     String login(String username, String password);

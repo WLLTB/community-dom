@@ -5,8 +5,7 @@ import cn.hutool.crypto.digest.Digester;
 import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTHeader;
 import cn.hutool.jwt.JWTUtil;
-import common.bean.User;
-import org.springframework.stereotype.Component;
+import user.bean.User;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package common.bean;
+package user.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

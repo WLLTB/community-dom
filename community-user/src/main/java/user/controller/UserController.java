@@ -1,6 +1,6 @@
 package user.controller;
 
-import common.bean.User;
+import user.bean.User;
 import common.common.Result;
 import io.swagger.annotations.Api;
 import org.apache.commons.lang.StringUtils;
