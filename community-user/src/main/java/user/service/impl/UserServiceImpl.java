@@ -9,6 +9,8 @@ import user.service.UserService;
 import user.utils.RedisUtil;
 import user.utils.UserUtils;
 
+import java.util.Date;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -42,7 +44,9 @@ public class UserServiceImpl implements UserService {
         }
 
         user.setPassword(UserUtils.MD5DigestHex(user.getPassword()));
+        user.setUpdateTime(new Date());
         userRepository.save(user);
+
         return StringUtils.EMPTY;
     }
 }
