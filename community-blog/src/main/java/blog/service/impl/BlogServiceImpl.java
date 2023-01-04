@@ -10,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -28,7 +27,6 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public void saveBlog(Blog blog) {
-        blog.setUpdateTime(new Date());
         blogRepository.save(blog);
     }
 
