@@ -27,7 +27,7 @@ public class Blog {
 
     private String title;
 
-    private Integer typeId;
+    private String typeId;
 
     private Integer views;
 
