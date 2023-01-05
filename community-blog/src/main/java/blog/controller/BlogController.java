@@ -8,8 +8,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-
 @Api(tags = "博客")
 @RestController
 @RequestMapping("/blog")
@@ -44,4 +42,18 @@ public class BlogController {
         blogService.delete(id);
         return Result.success(null);
     }
+
+    @GetMapping("/getById")
+    @ApiOperation("获取详情")
+    public Result getBlogById(@RequestParam String id) {
+        Blog blog = blogService.findBlogById(id);
+        return blog != null ? Result.success(blog) : Result.fail("博客不存在");
+    }
+
+//
+//    @GetMapping("/type")
+//    @ApiOperation("获取分类")
+//    public Result typeList() {
+//
+//    }
 }

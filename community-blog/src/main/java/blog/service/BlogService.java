@@ -9,4 +9,6 @@ public interface BlogService {
     void saveBlog(Blog blog);
 
     void delete(String id);
+
+    Blog findBlogById(String id);
 }

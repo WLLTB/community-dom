@@ -34,4 +34,9 @@ public class BlogServiceImpl implements BlogService {
     public void delete(String id) {
         blogRepository.deleteById(id);
     }
+
+    @Override
+    public Blog findBlogById(String id) {
+        return blogRepository.findBlogById(id);
+    }
 }
