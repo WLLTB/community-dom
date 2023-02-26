@@ -6,12 +6,12 @@ spring:
     name: BLOG
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      server-addr: 106.12.109.2:8848
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/community?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/community?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: root
   redis:
